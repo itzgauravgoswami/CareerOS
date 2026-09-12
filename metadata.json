@@ -1,0 +1,6 @@
+{
+  "name": "CareerOS",
+  "description": "AI-Powered Academia–Industry Skill Intelligence Network connecting Students, Academicians, Institutions, and Industry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

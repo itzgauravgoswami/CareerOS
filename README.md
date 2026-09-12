@@ -1569,7 +1569,7 @@ Settings
 
 ## AI
 
-* Gemini
+* Large Language Models & GenAI
 * Structured JSON generation
 * Embeddings
 * Retrieval-Augmented Generation
@@ -1753,7 +1753,7 @@ The cycle repeats as the student progresses.
 
 ---
 
-# 56. SIH Demonstration Flow
+# 56. Interactive Demonstration Flow
 
 The strongest demonstration should show the complete lifecycle rather than isolated features.
 

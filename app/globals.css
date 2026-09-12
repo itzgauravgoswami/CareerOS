@@ -1,0 +1,277 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+    --card-bg: rgba(6, 9, 18, 0.85);
+    --card-inner: rgba(2, 4, 10, 0.9);
+    --border-blue: rgba(59, 130, 246, 0.22);
+    --border-blue-hover: rgba(59, 130, 246, 0.45);
+    --blue-primary: #2563eb;
+    --blue-secondary: #3b82f6;
+    --blue-accent: #60a5fa;
+  }
+
+  html, body {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    overflow-x: clip;
+  }
+
+  /* Futuristic Cyber Gridlines on Body */
+  body {
+    background-color: #000000 !important;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(37, 99, 235, 0.22) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 90% 80%, rgba(30, 64, 175, 0.12) 0%, transparent 50%),
+      linear-gradient(to right, rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(59, 130, 246, 0.08) 1px, transparent 1px) !important;
+    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px !important;
+    background-attachment: fixed !important;
+  }
+
+  /* Custom subtle sleek black and neon blue scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e40af;
+    border-radius: 9999px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+  }
+}
+
+/* ==========================================================================
+   CYBER GRIDLINES BACKGROUND UTILITY
+   ========================================================================== */
+.bg-grid-cyber {
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.09) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.bg-grid-cyber-fine {
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* ==========================================================================
+   BLACK & BLUE THEME OVERRIDES FOR SURFACES & CONTAINERS
+   ========================================================================== */
+
+/* Main outer cards -> sleek dark obsidian with frosted backdrop blur */
+.bg-\[\#0D1527\],
+[class*="bg-[#0D1527]"] {
+  background-color: rgba(6, 9, 18, 0.85) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+}
+
+/* Inner nested cards & panels -> deeper black with subtle blue border */
+.bg-\[\#090F1E\],
+[class*="bg-[#090F1E]"],
+.bg-\[\#0B1324\],
+[class*="bg-[#0B1324]"],
+.bg-\[\#0B1120\],
+[class*="bg-[#0B1120]"],
+.bg-\[\#0B1222\],
+[class*="bg-[#0B1222]"],
+.bg-\[\#091122\],
+[class*="bg-[#091122]"] {
+  background-color: rgba(2, 4, 10, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* Top-level layout containers -> pure black */
+.bg-\[\#070D19\],
+[class*="bg-[#070D19]"],
+.bg-\[\#070C18\],
+[class*="bg-[#070C18]"] {
+  background-color: #000000 !important;
+}
+
+/* Highlighted panels, active items & secondary widgets */
+.bg-\[\#0E172A\],
+[class*="bg-[#0E172A]"],
+.bg-\[\#0F1A30\],
+[class*="bg-[#0F1A30]"],
+.bg-\[\#131D31\],
+[class*="bg-[#131D31]"],
+.bg-\[\#131E35\],
+[class*="bg-[#131E35]"],
+.bg-\[\#152038\],
+[class*="bg-[#152038]"],
+.bg-\[\#121E36\],
+[class*="bg-[#121E36]"],
+.bg-\[\#1B2844\],
+[class*="bg-[#1B2844]"],
+.bg-\[\#1A2844\],
+[class*="bg-[#1A2844]"],
+.bg-\[\#1A2640\],
+[class*="bg-[#1A2640]"] {
+  background-color: rgba(10, 18, 36, 0.88) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+/* Slate backgrounds tuned to black/blue scheme */
+.bg-slate-900,
+[class*="bg-slate-900"] {
+  background-color: #03050a !important;
+}
+.bg-slate-950,
+[class*="bg-slate-950"] {
+  background-color: #000000 !important;
+}
+.bg-slate-800 {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+}
+.bg-slate-800\/40 {
+  background-color: rgba(15, 23, 42, 0.4) !important;
+}
+.bg-slate-800\/50 {
+  background-color: rgba(15, 23, 42, 0.5) !important;
+}
+.bg-slate-800\/60 {
+  background-color: rgba(15, 23, 42, 0.6) !important;
+}
+
+/* ==========================================================================
+   BORDERS: HIGH-TECH BLUE BORDERS
+   ========================================================================== */
+.border-\[\#1E293B\],
+[class*="border-[#1E293B]"] {
+  border-color: rgba(59, 130, 246, 0.22) !important;
+}
+.border-slate-800,
+[class*="border-slate-800"] {
+  border-color: rgba(59, 130, 246, 0.2) !important;
+}
+.border-slate-700,
+[class*="border-slate-700"] {
+  border-color: rgba(59, 130, 246, 0.35) !important;
+}
+.hover\:border-slate-700:hover,
+.hover\:border-slate-600:hover {
+  border-color: rgba(59, 130, 246, 0.5) !important;
+}
+
+/* ==========================================================================
+   BLUE & WHITE ACCENTS: BUTTONS, TEXT, ICONS, BADGES
+   ========================================================================== */
+/* Transform legacy purple/indigo buttons to electric blue */
+.bg-indigo-600,
+[class*="bg-indigo-600"] {
+  background-color: #2563eb !important;
+}
+.hover\:bg-indigo-500:hover,
+[class*="hover:bg-indigo-500"]:hover {
+  background-color: #3b82f6 !important;
+}
+.hover\:bg-indigo-700:hover,
+[class*="hover:bg-indigo-700"]:hover {
+  background-color: #1d4ed8 !important;
+}
+.bg-indigo-500\/20 {
+  background-color: rgba(59, 130, 246, 0.18) !important;
+}
+.bg-indigo-500\/30 {
+  background-color: rgba(59, 130, 246, 0.25) !important;
+}
+.bg-indigo-600\/15 {
+  background-color: rgba(37, 99, 235, 0.18) !important;
+}
+.bg-indigo-600\/10 {
+  background-color: rgba(37, 99, 235, 0.12) !important;
+}
+.bg-indigo-950,
+.bg-indigo-950\/40,
+.bg-indigo-950\/50 {
+  background-color: rgba(15, 23, 42, 0.7) !important;
+}
+
+/* Text transformed to crisp white and electric light blue */
+.text-indigo-400 {
+  color: #60a5fa !important;
+}
+.text-indigo-300 {
+  color: #93c5fd !important;
+}
+.text-indigo-200 {
+  color: #bfdbfe !important;
+}
+.group-hover\:text-indigo-300:hover,
+.group:hover .group-hover\:text-indigo-300 {
+  color: #93c5fd !important;
+}
+
+/* Purple text / icons mapped to sky blue / cyan */
+.text-purple-400 {
+  color: #38bdf8 !important;
+}
+.text-purple-300 {
+  color: #7dd3fc !important;
+}
+.bg-purple-500\/20 {
+  background-color: rgba(56, 189, 248, 0.18) !important;
+}
+.border-purple-500\/30 {
+  border-color: rgba(56, 189, 248, 0.3) !important;
+}
+
+/* Border accents transformed to blue */
+.border-indigo-500,
+[class*="border-indigo-500"] {
+  border-color: rgba(59, 130, 246, 0.45) !important;
+}
+.border-indigo-500\/30 {
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+.border-indigo-500\/40 {
+  border-color: rgba(59, 130, 246, 0.45) !important;
+}
+.hover\:border-indigo-500\/40:hover {
+  border-color: rgba(59, 130, 246, 0.6) !important;
+}
+.hover\:border-indigo-400:hover {
+  border-color: #60a5fa !important;
+}
+
+/* Box shadows mapped to electric blue glow */
+.shadow-indigo-600\/20,
+.shadow-indigo-500\/20 {
+  box-shadow: 0 4px 20px -2px rgba(37, 99, 235, 0.35) !important;
+}
+
+/* Blue & White gradients */
+.from-indigo-600.to-purple-600,
+.from-indigo-600.via-purple-600.to-cyan-400 {
+  background-image: linear-gradient(135deg, #2563eb, #0284c7, #38bdf8) !important;
+}
+.from-indigo-900\/50.to-purple-900\/50 {
+  background-image: linear-gradient(to right, rgba(30, 58, 138, 0.6), rgba(14, 116, 144, 0.6)) !important;
+}
+
+/* Subtle card hover glow */
+.rounded-2xl.border,
+.rounded-3xl.border {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.rounded-2xl.border:hover,
+.rounded-3xl.border:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+}
